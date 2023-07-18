@@ -8,7 +8,7 @@ class Customer (models.Model):
     email =models.EmailField()
     adress=models.TextField()
 
-    def __str__(self):
-        return self.names
+# def __str__(self):
+#     return self.names
 
 

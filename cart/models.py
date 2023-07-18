@@ -9,8 +9,8 @@ class Cart (models.Model):
     user_id = models.CharField(max_length=24)
     total_items = models.FloatField()
 
-    def __str__(self):
-        return self.name
+# def __str__(self):
+    # return self.name
 
 
 
