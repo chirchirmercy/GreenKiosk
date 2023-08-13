@@ -1,21 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <link ref="stylesheet" href="{% static 'Css/product_details.css' %}"/>
+    <title>Product Details</title>
 </head>
-<body>
-    <img src="{{product.image.url}} alt=product image"/>
-    <h4>{{product.tittle}}</h4>
+<body>    <h4>{{product.names}}</h4>
+    <img src="{{product.image.url}}"/>
     <p>{{product.description}}</p>
     <span>{{product.price}}</span>
-    <td> <a href="{url product_details
-        id=product.id%}">
-        view product </a></td>
-        <button>Add to cart</button>
-</body>
+    <a href="{% url 'addToCart_view' %}">
+        <button>Add to Cart</button>
+       </a></body>
 </html>
 
-<body>
-   

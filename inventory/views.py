@@ -7,14 +7,21 @@ from .models import Product
 
 # Create your views here.def product_upload_view(request):
 def product_upload_view(request):
-    form =ProductUploadForm()
+    if request .method=="POST":
+        form =ProductUploadForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form=ProductUploadForm
+              
+   
     return render(request,"inventory/product_upload.html",{"form":form})
 
 def products_list(request):
-    projects=Product.objects.all()
-    return render (request,"inventory/products_list.html",{"products":Product})
+    products=Product.objects.all()
+    return render (request,"inventory/product_list.html",{"products":products})
     
 
-def product_detail_view(request,id):
-    product=product.objects.get(id=id)
+def product_detail(request,id):
+    product=Product.objects.get(id=id)
     return render(request,"inventory/product_details.html", {"product":product})
