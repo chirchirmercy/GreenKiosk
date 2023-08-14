@@ -40,3 +40,12 @@ def product_update_view(request, id):
     
 
 
+
+def add_to_cart(request, product_id):
+    product = Product.objects.get(pk=product_id)
+
+    # Perform cart-related logic, such as adding the product to the cart
+    # ...
+
+    return redirect('products_list')  # Redirect back to the product list
+    

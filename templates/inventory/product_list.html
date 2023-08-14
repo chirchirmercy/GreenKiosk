@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
            #all {
             text-align: center;
             margin-top: 20px;
+            background-color: #007bff;
         }
 
         .product-container {
@@ -15,6 +17,7 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
+            background-color:purple;
         }
 
         .product {
@@ -79,7 +82,10 @@
                 <p>Price: {{ product.price }}</p>
                 <a href="{% url 'product_detail_view' id=product.id %}">View Product</a>
                 <a href="{% url 'product_update_view' id=product.id %}">Edit</a>
+                
                
+                <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+                 
 
             </div>
         </div>
