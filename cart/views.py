@@ -6,3 +6,5 @@ from .form import CartUploadForm
 def cart_upload(request):
     form = CartUploadForm()
     return render(request,'cart/cart_upload.html',{'form': form})
+
+
